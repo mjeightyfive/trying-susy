@@ -1,0 +1,113 @@
+// $susy: (
+//   flow: ltr,
+//   math: fluid,
+//   output: float,
+//   gutter-position: after,
+//   container: auto,
+//   container-position: center,
+//   columns: 4,
+//   gutters: .25,
+//   column-width: false,
+//   global-box-sizing: content-box,
+//   last-flow: to,
+//   debug: (
+//     image: hide,
+//     color: rgba(#66f, .25),
+//     output: background,
+//     toggle: top right,
+//   ),
+//   use-custom: (
+//     background-image: true,
+//     background-options: false,
+//     box-sizing: true,
+//     clearfix: false,
+//     rem: true,
+//   )
+// );
+
+$susy: (
+    columns: 12,
+    gutters: (1/2),
+    math: fluid,
+    output: float,
+    gutter-position: inside,
+);
+
+$widelayout: (
+    columns: 24,
+    gutters: (1/2),
+    math: fluid,
+    output: float,
+    gutter-position: inside,
+);
+
+$shorthand: 12 1/4 fluid float inside;
+
+// breakpoints
+$medium: 500px;
+
+// not working
+// $960gs: (12 (60px 10px) static split);
+
+// @include layout($widelayout);
+@include layout($shorthand);
+// @include layout(12 (60px 10px) static split);
+
+// wrap inside:
+
+// @include with-layout(12) {
+//     // code
+// }
+//
+// for chnaging layout
+
+.container {
+    @include container(80%);
+    // @include clearfix;
+}
+
+
+.header {
+
+}
+
+.main-content {
+
+    // padding: 0 2em;
+    // @include span(7);
+
+    .top {
+        @include span(12);
+    }
+
+    #image {
+
+        @include span(12);
+
+        @include breakpoint($medium) {
+            @include span(6);
+        }
+
+        // width: span(3 of 7);
+
+        .responsive {
+            max-width: 100%;
+            min-width: 100%;
+        }
+    }
+
+    .rhs {
+
+        @include span(12);
+
+        @include breakpoint($medium) {
+            @include span(6 at 7);
+        }
+        // @include span(4 of 7);
+        // width: span(4 of 7);
+    }
+
+    .bottom {
+        @include span(12);
+    }
+}

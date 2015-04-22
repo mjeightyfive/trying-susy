@@ -1,0 +1,83 @@
+*,
+*:after,
+*:before {
+  @include box-sizing(border-box);
+}
+
+body {
+    @include Roboto-Thin;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $dark-grey;
+    @include Roboto-Thin;
+}
+
+h1 {
+    text-transform: uppercase;
+}
+
+ a {
+    @include link-colors($grapefruit, $salmon);
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.header {
+
+    font-size: 22px;
+
+    .logo {
+        padding-bottom: 1em;
+        display: block;
+        text-align: center;
+        color: $black;
+        @include Zapfino;
+    }
+
+    nav {
+
+        margin: 0 auto;
+        text-align: center;
+        text-transform: none;
+
+        ul {
+
+            padding: 0;
+            margin: 0;
+
+            li {
+
+                @include Roboto-Thin;
+
+                @include breakpoint(500px) {
+                    display: inline-block;
+                    padding: 10px 20px;
+                }
+
+                a,
+                a:visited,
+                a:link {
+                    padding: 20px 10px;
+                    display: block;
+
+
+
+                    color: $dark-grey;
+                }
+
+                a:hover {
+                    background: $grapefruit;
+                    color: $white;
+                }
+            }
+        }
+
+    }
+}
+
+.main-content {
+
+}
+

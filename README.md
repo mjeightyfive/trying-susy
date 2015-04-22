@@ -1,6 +1,6 @@
-# init-webapp
+# trying-susy
 
-Initial files for creating a simple web app.
+Just learning [Susy](http://susy.oddbird.net/). Basic setup with no Ruby dependency.
 
 ## Install
 

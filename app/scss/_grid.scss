@@ -25,23 +25,45 @@
 //   )
 // );
 
+// $susy: (
+//     columns: 12,
+//     gutters: (1/2),
+//     math: fluid,
+//     output: float,
+//     gutter-position: inside,
+// );
+
 $susy: (
     columns: 12,
     gutters: (1/2),
     math: fluid,
     output: float,
     gutter-position: inside,
+    debug: (
+        image: show,
+        output: overlay,
+        toggle: top right,
+    ),
 );
 
-$widelayout: (
-    columns: 24,
-    gutters: (1/2),
-    math: fluid,
-    output: float,
-    gutter-position: inside,
-);
+@include border-box-sizing;
 
-$shorthand: 12 1/4 fluid float inside;
+// susy grid debug
+head {
+    @include overlay-head;
+    &:before { @include overlay-trigger; }
+    &:hover { @include overlay-trigger-hover; }
+}
+
+// $widelayout: (
+//     columns: 24,
+//     gutters: (1/2),
+//     math: fluid,
+//     output: float,
+//     gutter-position: inside,
+// );
+
+// $shorthand: 12 1/4 fluid float inside;
 
 // breakpoints
 $medium: 500px;
@@ -50,7 +72,7 @@ $medium: 500px;
 // $960gs: (12 (60px 10px) static split);
 
 // @include layout($widelayout);
-@include layout($shorthand);
+// @include layout($shorthand);
 // @include layout(12 (60px 10px) static split);
 
 // wrap inside:
@@ -62,7 +84,7 @@ $medium: 500px;
 // for chnaging layout
 
 .container {
-    @include container(80%);
+    @include container;
     // @include clearfix;
 }
 
